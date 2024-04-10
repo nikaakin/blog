@@ -15,6 +15,7 @@ return new class () extends Migration {
             $table->string('title');
             $table->text('content');
             $table->string('preview');
+            $table->string('preview_image');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('topic_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
