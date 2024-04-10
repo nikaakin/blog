@@ -14,7 +14,8 @@
     <body class="font-sans antialiased dark:bg-black mx-10 my-5 text-white flex items-center flex-col gap-20 text-xl">
         <h1 class="text-3xl font-bold text-gray-400">Create a blog:</h1>
         
-        <form action="/blog" method="POST" class="flex flex-col gap-2 w-1/2">
+        <form action="{{ route('blog.store') }}" method="POST" class="flex flex-col gap-2 w-1/2">
+            @csrf
             <label for="title">Title:</label>
             <input type="text" name="title" id="title" class="rounded bg-gray-300 text-slate-900 px-3 py-2 font-thin">
             
@@ -26,6 +27,14 @@
 
             <label for="preview_image">Preview image:</label>
             <input type="text" name="preview_image" class="rounded bg-gray-300 text-slate-900 px-3 py-2 font-thin" id="preview_image">
+
+            <label for="user_id">user_id:</label>
+            <input type="number" name="user_id" class="rounded bg-gray-300 text-slate-900 px-3 py-2 font-thin" id="user_id">
+
+            <label for="topic_id">topic_id:</label>
+            <input type="number" name="topic_id" class="rounded bg-gray-300 text-slate-900 px-3 py-2 font-thin" id="topic_id">
+
+            <button type="submit" class="bg-slate-200 text-stone-700 font-bold w-32 rounded hover:bg-slate-300 transition-colors self-center mt-10">Submit</button>
         </form>
 
     </body>
