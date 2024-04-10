@@ -12,6 +12,6 @@ class Topic extends Model
     protected $fillable = [
         'title'
     ];
-    
+
 
 }
