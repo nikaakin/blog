@@ -10,7 +10,6 @@ class MigrationController extends Controller
     public function up()
     {
         try {
-            throw new Exception('here is this gbriquergbrekgbreig qlrqroan r qropgn', 500);
             $exitCode = Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
         } catch(Exception $e) {
             return $e;
