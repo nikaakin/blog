@@ -14,13 +14,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'nikaakin',
+            'email' => 'nika@nika.com',
+            'password' => env("ADMIN_PASSWORD"),
+            'is_admin' => true
         ]);
 
-        Topic::factory()->create();
+        User::factory()->create([
+            'name' => 'bedena',
+            'email' => 'bedena@bedena.com',
+            'password' => env("ADMIN_PASSWORD"),
+            'is_admin' => true
+        ]);
+
+        Topic::factory()->create([
+            'title' => 'React Native'
+        ]);
+
+        Topic::factory()->create([
+            'title' => 'Wordpress'
+        ]);
     }
 }
