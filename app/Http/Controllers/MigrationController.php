@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Support\Facades\Artisan;
 
 class MigrationController extends Controller
 {
     public function up()
     {
-        $exitCode = Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
+        try {
+            throw new Exception('here is this gbriquergbrekgbreig qlrqroan r qropgn', 500);
+            $exitCode = Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
+        } catch(Exception $e) {
+            return $e;
+        }
         return response()->json([
             'message' => 'Database migrated successfully',
             'exitCode' => $exitCode
